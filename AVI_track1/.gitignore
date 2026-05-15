@@ -1,0 +1,11 @@
+# 忽略 preprocess 文件夹
+preprocess/
+
+# 忽略 save_ckpt 文件夹
+save_ckpt/
+
+# 忽略 img 文件夹
+img/
+
+# 忽略 args_log 文件夹
+args_log/
