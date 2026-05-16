@@ -4,7 +4,7 @@ export CUDA_VISIBLE_DEVICES=1
 
 # 定义参数
 TEST_CSV="test_data.csv"               # 测试集CSV文件路径
-Training_Args_JSON_FILE="save_ckpt/track1/SFR-Embedding-Mistral-2048_SFR-Embedding-Mistral-2048_SFR-Embedding-Mistral-2048/q3/q3.json"   # 训练参数JSON文件路径以初始化模型
+Training_Args_JSON_FILE="checkpoints/q3/q3.json"   # 训练参数JSON文件路径以初始化模型
 
 
 get_json_value() {
@@ -47,7 +47,7 @@ echo "模态为: $MODALITIES"
 
 
 # 执行训练脚本
-python test_task1.py \
+python3 test_task1.py \
   --test_csv "$TEST_CSV" \
   --question "$QUESTION" \
   --label_col "$LABEL_COL" \
