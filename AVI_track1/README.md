@@ -1,4 +1,4 @@
-# 🏆 AVI Challenge 2026 - Track1: Self-Report Personality Regression
+#  AVI Challenge 2026 - Track1: Self-Report Personality Regression
 
 ## 项目简介
 
