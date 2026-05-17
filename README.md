@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```bash
 # Track1
 cd AVI_track1
-pip install -r requirements.txt
+pip install -r requirement.txt
 
 # Track2
 cd ../AVI_track2
