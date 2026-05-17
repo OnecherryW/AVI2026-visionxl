@@ -38,7 +38,7 @@ AVI_track2/
 │   └── baseline_model.py     # 单模态/基线模型
 ├── dataset/
 │   └── baseline_dataset2_vote.py # 数据处理
-├── features/
+├── features/                 #测试集特征
 │   ├── audio/                # 音频特征
 │   ├── video/                # 视频特征
 │   └── text/                 # 文本特征
