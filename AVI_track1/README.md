@@ -80,5 +80,5 @@ save_ckpt/track1/<audio_name>_<video_name>_<text_name>/<question>/
 bash test_task1.sh
 ```
 
-`test_task1.sh` 会读取 `Training_Args_JSON_FILE`（如 `checkpoints/q3/q3.json`）中的参数来恢复模型并生成结果。  
+`test_task1.sh` 会读取 `Training_Args_JSON_FILE`（如 `checkpoints/q3/q3.json`） 中的参数来恢复模型并生成结果。  
 如需切换维度任务，请修改 `Training_Args_JSON_FILE` 指向对应的 `q4/q5/q6` JSON 文件。
