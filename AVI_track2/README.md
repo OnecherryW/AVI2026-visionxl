@@ -1,4 +1,4 @@
-# 🏆 AVI Challenge 2026 - Track2: Personality Assessment
+# AVI Challenge 2026 - Track2: Personality Assessment
 
 ## 项目简介
 
