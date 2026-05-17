@@ -109,7 +109,19 @@ bash test_task1.sh
 
 默认会读取 `checkpoints/q3/q3.json`。若需测试其他维度，请修改脚本中的 `Training_Args_JSON_FILE` 路径（如 q4/q5/q6）。
 
+### 拼接
+
+可直接运行：
+
+```python
+python trans.py
+```
+
+执行`trans.py`文件将前面q3/q4/q5/q6输出结果按照id号拼接在一起，生成submission.csv文件为最终提交测试结果。
+
 ---
+
+
 
 ## 6️⃣ 输出结果说明
 
