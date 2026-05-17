@@ -31,6 +31,7 @@ AVI_track1/
 ├── test_task1.py                 # 测试入口
 ├── train_track1.sh               # 训练脚本
 ├── test_task1.sh                 # 测试脚本（读取 checkpoints 下 json 参数）
+├── trans.py                      # 生成最终submission.csv文件
 ├── train_data.csv
 ├── val_data.csv
 ├── test_data.csv
