@@ -56,7 +56,7 @@ pip install -r requirement.txt
 
 ## 训练
 
-默认训练脚本：
+默认训练入口脚本（内部调用 `train_task1.py`）：
 
 ```bash
 bash train_track1.sh
