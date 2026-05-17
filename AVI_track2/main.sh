@@ -11,11 +11,11 @@ nohup python -u main.py \
     --label_col g_level \
     --metadata_cols gender age education work_experience H_self_centered E_self_centered A_self_centered C_self_centered self_mean self_std self_max self_min self_range H_minus_E H_minus_A H_minus_C E_minus_A E_minus_C A_minus_C \
     --video_dim 1152 \
-    --video_dir /home/gdp/AVI/data/face_embedding/siglip2_all_maxP_face \
+    --video_dir ./features/video \
     --audio_dim 768 \
-    --audio_dir /home/gdp/AVI/data/audioFeatures/audioFeatures/emo2vec/max_pooling/emotion2vec_plus_seed \
+    --audio_dir ./features/audio \
     --text_dim 4096 \
-    --text_dir /home/gdp/AVI/data/text_feature/SFR-Embedding-Mistral \
+    --text_dir ./features/text \
     --target_dim 3 \
     --batch_size 16 \
     --learning_rate 1e-4 \
