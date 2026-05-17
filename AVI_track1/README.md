@@ -1,44 +1,84 @@
-### Directory Structure
+# AVI Track1
 
-AVI/
-├─ dataset/  
-│  ├─ baseline_dataset.py                              # track1 dataset类  
-│  └─ baseline_dataset2.py                             # track2 dataset类  
-├─ model/                                                
-│  ├─ new_model/                                       # 文件夹，我们当前自己的baseline  
-│  ├─ baseline_model.py                                # 官方baseline  
-│  └─ fusion_attention.py                              # gpt生成的一个baseline  
-├─ checkpoints/  
-│  ├─ q3/                                              #存放模型和对应的超参数文件（JSON）                           
-│  └─ q4/
-│  └─ q5/
-│  └─ q6/
-├─ utils/                                              # 检查输入的特征的shape以便于调参  
-│  └─ npy_check.py  
-├─ README.md  
-├─ requirement.txt  
-├─ test_task1.py                                   # track1 测试集代码
-├─ train_task1.py                                  # track1 训练集代码
-├─ train_task1.sh 
-├─ test_task1.sh 
+本目录用于 AVI Track1 的训练与测试，包含数据读取、模型定义、已保存权重与推理脚本。
 
+## 目录结构
 
-
-### Usage
-#### 1. Prepare features
-* 确认feature文件夹路径，模型输入是我们提取好的features
-* 并确认不同feature的shape，以便于调整模型参数
-	* utils/npy_check.py可以帮助确认
-#### 2. Install Requirements
+```text
+AVI_track1/
+├── dataset/
+│   ├── baseline_dataset.py
+│   └── baseline_dataset2.py
+├── model/
+│   ├── baseline_model.py
+│   ├── fusion_attention.py
+│   └── new_model/
+├── checkpoints/
+│   ├── q3/
+│   │   ├── best_model.pth
+│   │   └── q3.json
+│   ├── q4/
+│   │   ├── best_model.pth
+│   │   └── q4.json
+│   ├── q5/
+│   │   ├── best_model.pth
+│   │   └── q5.json
+│   └── q6/
+│       ├── best_model.pth
+│       └── q6.json
+├── utils/
+│   └── npy_check.py
+├── train_task1.py
+├── test_task1.py
+├── train_track1.sh
+├── test_task1.sh
+├── train_data.csv
+├── val_data.csv
+├── test_data.csv
+├── all_data.csv
+├── trans.py
+├── requirement.txt
+└── README.md
 ```
-conda activate [进入自己的环境]
-```
+
+## 环境准备
+
 ```bash
-pip install -r /data2/heyichao/AVI/requirement.txt
-```
-* 不一定全，运行不起来自己按照没安装的生成一下
-#### 2. Run the Test Script
-```bash 
-bash test_task1.sh   # 注意每次只能运行一个维度，运行其他维度要修改脚本中Training_Args_JSON_FILE字段，路径就是checkpoints里面每个维度里面的JSON路径
+conda activate <your_env>
+pip install -r requirement.txt
 ```
 
+## 数据与特征准备
+
+1. 准备 `train_data.csv / val_data.csv / test_data.csv`。
+2. 确认音频、视频、文本特征目录路径（在脚本参数中配置）。
+3. 使用 `utils/npy_check.py` 检查特征 shape，确保与 `*_DIM` 参数匹配。
+
+## 训练
+
+默认训练脚本：
+
+```bash
+bash train_track1.sh
+```
+
+可在 `train_track1.sh` 中按需调整：
+- `QUESTION`（q3/q4/q5/q6）
+- `LABEL_COL`
+- `AUDIO_DIR / VIDEO_DIR / TEXT_DIR`
+- 训练超参数与模型结构参数
+
+训练输出默认写入：
+
+```text
+save_ckpt/track1/<audio_name>_<video_name>_<text_name>/<question>/
+```
+
+## 测试 / 推理
+
+```bash
+bash test_task1.sh
+```
+
+`test_task1.sh` 会读取 `Training_Args_JSON_FILE`（如 `checkpoints/q3/q3.json`）中的参数来恢复模型并生成结果。  
+如需切换维度任务，请修改 `Training_Args_JSON_FILE` 指向对应的 `q4/q5/q6` JSON 文件。
