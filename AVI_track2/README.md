@@ -117,8 +117,6 @@ bash test.sh
 
 - **最佳模型**：`output/AVI2026_track2/best_model_2026_track2.pth`
 - **最终测试提交**：`output/AVI2026_track2/submission.csv`
-- **损失函数**：均方误差（MSE）
-- 日志与训练过程保存在 `log/`
 
 ---
 
